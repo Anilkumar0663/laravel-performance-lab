@@ -1,58 +1,190 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+ # 🚀 Laravel Performance Lab
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge&logo=laravel)
+![PHP](https://img.shields.io/badge/PHP-8.3+-777BB4?style=for-the-badge&logo=php)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-## About Laravel
+A practical **Laravel 13** project built to benchmark Eloquent features, database queries, and performance optimization techniques using a **real-world dataset**.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Instead of comparing Laravel features with a few hundred factory records, this project benchmarks them against a large dataset to simulate production-like scenarios.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## ✨ Features
 
-## Learning Laravel
+* ⚡ Large benchmark dataset
+* 📊 Real performance metrics
+* 🧠 Query count analysis
+* 💾 Memory usage comparison
+* ⏱️ Execution time benchmarking
+* 🔍 EXPLAIN query analysis
+* 📚 Well-documented benchmark examples
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+# 📦 Benchmark Dataset
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+| Table       |   Records |
+| ----------- | --------: |
+| Users       |   100,000 |
+| Categories  |        20 |
+| Products    |   500,000 |
+| Orders      | 1,000,000 |
+| Order Items |  Millions |
+| Payments    | 1,000,000 |
 
-## Agentic Development
+---
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+# 📈 Completed Benchmarks
 
-```bash
-composer require laravel/boost --dev
+| Benchmark              | Status |
+| ---------------------- | :----: |
+| N+1 Query Problem      |    ✅   |
+| with() vs load()       |    ✅   |
+| chunk() vs chunkById() |    ✅   |
+| lazy() vs cursor()     |    ✅   |
 
-php artisan boost:install
+---
+
+# 🚧 Upcoming Benchmarks
+
+* Database Indexing
+* EXPLAIN Query Analysis
+* exists() vs count()
+* whereHas() vs join()
+* select() vs *
+* Query Builder vs Eloquent
+* Raw SQL vs Eloquent
+* paginate() vs simplePaginate()
+* cursorPaginate()
+* Database Transactions
+* Optimistic vs Pessimistic Locking
+* Cache Performance
+* Queue Performance
+
+---
+
+# 📊 Benchmark Metrics
+
+Each benchmark measures one or more of the following:
+
+* Query Count
+* Execution Time
+* Memory Usage
+* Database Execution Plan
+* Performance Comparison
+* Real-world Use Cases
+
+---
+
+# 📁 Project Structure
+
+```text
+app/
+ ├── Http/
+ │    └── Controllers/
+ │         └── BenchmarkController.php
+ │
+ └── Services/
+      └── BenchmarkDataGenerator.php
+
+config/
+ └── benchmark.php
+
+database/
+ ├── migrations/
+ └── seeders/
+      └── BenchmarkSeeder.php
+
+docs/
+
+screenshots/
+
+routes/
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+---
 
-## Contributing
+# ⚙️ Installation
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Clone the repository
 
-## Code of Conduct
+```bash
+git clone https://github.com/Anilkumar0663/laravel-performance-lab.git
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Move into the project
 
-## Security Vulnerabilities
+```bash
+cd laravel-performance-lab
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Install dependencies
 
-## License
+```bash
+composer install
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Copy the environment file
+
+```bash
+cp .env.example .env
+```
+
+Generate the application key
+
+```bash
+php artisan key:generate
+```
+
+Configure your database in the `.env` file.
+
+Run migrations
+
+```bash
+php artisan migrate
+```
+
+Generate the benchmark dataset
+
+```bash
+php artisan db:seed --class=BenchmarkSeeder
+```
+
+---
+
+# 📚 Documentation
+
+Detailed benchmark documentation will be available inside the `docs/` directory.
+
+Each benchmark includes:
+
+* Problem Statement
+* Benchmark Setup
+* Source Code
+* Results
+* Performance Analysis
+* Best Practices
+
+---
+
+# 🤝 Contributing
+
+Contributions are always welcome.
+
+If you have ideas for additional Laravel performance benchmarks or improvements, feel free to open an issue or submit a pull request.
+
+---
+
+# 📜 License
+
+This project is open-sourced under the MIT License.
+
+---
+
+## ⭐ Support
+
+If you find this project useful, consider giving it a ⭐ on GitHub.
+
+It helps others discover the project and motivates future benchmark releases.
